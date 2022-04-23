@@ -43,11 +43,11 @@ elif int(ch) == 2:
     if int(img) ==1:
         print("Enter Your Key name: ",end ="")
         key = input()
-        os.system("aws ec2 run-instances --image-id ami-0e306788ff2473ccb --subnet-id subnet-ba5b5cd2 --instance-type t2.micro --key-name {} --security-group-ids sg-0c111e5b44f074df9 --count 1".format(key))
+        os.system("aws ec2 run-instances --image-id ami-0f9fc25dd2506cf6d --subnet-id subnet-02c8d39202cd28ae7 --instance-type t2.micro --key-name {} --security-group-ids sg-0cfb581ea9318d7f3 --count 1".format(key))
     elif int(img) == 2:
         print("Enter Your Key name: ",end ="")
         key = input()
-        os.system("aws ec2 run-instances --image-id ami-052c08d70def0ac62 --subnet-id subnet-ba5b5cd2 --instance-type t2.micro --key-name {} --security-group-ids sg-0c111e5b44f074df9 --count 1".format(key))
+        os.system("aws ec2 run-instances --image-id ami-0b0af3577fe5e3532 --subnet-id subnet-02c8d39202cd28ae7 --instance-type t2.micro --key-name {} --security-group-ids sg-0cfb581ea9318d7f3 --count 1".format(key))
 
 
 elif int(ch) == 3:
