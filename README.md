@@ -1,7 +1,7 @@
 # Menu Driven Project
 
 Modules:
-> Linux
+> Linux(RHEL8)
 
 > Python
 
