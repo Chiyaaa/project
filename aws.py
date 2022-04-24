@@ -15,13 +15,8 @@ print("""
  Press  3 : To Start a Instance
  Press  4 : To Stop a Instance 
  Press  5 : To Describe All Instances 
- Press  6 : To Create a Volume
- Press  7 : To Attach volume with instance
- Press  8 : For Partitioning the attached volume
- Press  9 : To configure Web Server
- Press 10 : To Format Partition
- Press 11 : To Mount the Web Server to Volume
- Press 12 : Exit
+ Press  6 : Exit
+
 """)
 
 print("Enter Your Choice : ",end="")
@@ -68,83 +63,7 @@ elif int(ch) == 5:
 
     os.system("aws ec2 describe-instances")
 
-    
 elif int(ch) == 6:
-
-    
-    print("Enter Size : ",end = "")
-    size = input()
-    print("Enter availability zone : ",end = "")
-    zone = input()
-    print("Enter volume type : ",end= "")
-    vtype = input()
-    os.system(" aws ec2 create-volume  --availability-zone {} --size {} --volume-type {}".format(zone,size,vtype))
-
-
-elif int(ch) == 7:
-
-
-    os.system("tput setaf 3")
-    print("\t\t\tVolume Zone & Instance Zone Must be same !!!")
-    print("\t\t\t--------------------------------------------")
-    os.system("tput setaf 7")
-    print("Enter volume-id : ",end = "")
-    vid = input()
-    print("Enter instance-id : ",end = "")
-    iid = input()
-    print("Enter device : /dev/",end= "")
-    device = input()
-    os.system(" aws ec2 attach-volume --volume-id {} --instance-id {} --device /dev/{} ".format(vid,iid,device))
-
-
-elif int(ch) == 8:
-
-    print("Enter IP : ",end = "")
-    ip = input()
-    print("Enter key : ",end = "")
-    key = input()
-    print("Enter device : /dev/",end= "")
-    device = input()
-    os.system(" ssh -l ec2-user {} -i {}.pem sudo fdisk /dev/{} ".format(ip,key,device))
-
-
-
-elif int(ch) == 9:
-
-    os.system("tput setaf 3")
-    print("\t\t\tHTTPD must be installed...")
-    print("\t\t\t--------------------------")
-    os.system("tput setaf 7")
-    print("Enter IP : ",end = "")
-    ip = input()
-    print("Enter key : ",end = "")
-    key = input()
-    os.system(" ssh -l ec2-user {} -i {}.pem sudo systemctl start httpd ".format(ip,key))
-
-
-elif int(ch) == 10:
-
-    print("Enter IP : ",end = "")
-    ip = input()
-    print("Enter key : ",end = "")
-    key = input()
-    print("Enter Device : /dev/",end="")
-    device = input()
-    os.system(" ssh -l ec2-user {} -i {}.pem sudo mkfs.ext4 /dev/{} ".format(ip,key,device))
-
-
-elif int(ch) == 11:
-
-    print("Enter IP : ",end = "")
-    ip = input()
-    print("Enter key : ",end = "")
-    key = input()
-    print("Enter Device : /dev/",end="")
-    device = input()
-    os.system(" ssh -l ec2-user {} -i {}.pem sudo mount /dev/{} /var/www/html/ ".format(ip,key,device))
-
-
-elif int(ch) == 12:
     exit()
     
 else:
